@@ -4,5 +4,4 @@ pnpm-lock.yaml
 .env
 dev.db
 dev.db-journal
-migrations/*_lint
-migration_lock.toml
+migrations
