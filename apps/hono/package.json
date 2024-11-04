@@ -7,7 +7,9 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.5",
-    "hono": "^4.6.9"
+    "hono": "^4.6.9",
+    "@packages/prisma": "workspace:*",
+    "@packages/domain": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",

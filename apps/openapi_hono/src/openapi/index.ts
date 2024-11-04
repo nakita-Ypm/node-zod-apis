@@ -1,5 +1,7 @@
-import { honoRoutes } from './hono/index.ts'
+import { honoRoutes } from './hono'
+import { postRoutes } from './post'
 
 export const routes = {
   ...honoRoutes,
+  ...postRoutes,
 }

@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { logger } from 'hono/logger'
-import { OpenAPIHonoHandler } from '../handler/openapi_hono.ts'
+import { OpenAPIHonoHandler } from '../handler/openapi_hono'
 import { serve } from '@hono/node-server'
 
 dotenv.config()
