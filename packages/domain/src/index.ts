@@ -1,1 +1,1 @@
-export * from './post_domain'
+export { PostDomain } from './post_domain'

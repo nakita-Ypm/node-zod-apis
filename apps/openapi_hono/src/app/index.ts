@@ -3,6 +3,7 @@ import { OpenAPIHono } from '@hono/zod-openapi'
 import { logger } from 'hono/logger'
 import { OpenAPIHonoHandler } from '../handler/openapi_hono'
 import { serve } from '@hono/node-server'
+import { PostHandler } from '../handler/post_handler'
 
 dotenv.config()
 
@@ -26,6 +27,6 @@ export class App {
   }
 
   static applyRoutes(app: OpenAPIHono) {
-    return app.route('/', OpenAPIHonoHandler.apply(app))
+    return app.route('/', OpenAPIHonoHandler.apply(app)).route('/', PostHandler.apply(app))
   }
 }

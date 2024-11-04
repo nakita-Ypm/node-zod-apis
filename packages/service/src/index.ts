@@ -1,1 +1,1 @@
-export * from './post_service'
+export { PostService } from './post_service'
