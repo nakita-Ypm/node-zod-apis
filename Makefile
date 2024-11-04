@@ -15,3 +15,6 @@ erun:
 
 migrate:
 	pnpm -F @packages/prisma migrate
+
+generate:
+	pnpm -F @packages/prisma generate
