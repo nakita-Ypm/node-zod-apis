@@ -9,6 +9,8 @@
     "hono": "^4.6.9"
   },
   "devDependencies": {
+    "@hono/swagger-ui": "^0.4.1",
+    "@hono/zod-openapi": "^0.16.4",
     "@types/node": "^20.11.17",
     "tsx": "^4.7.1"
   }
