@@ -20,7 +20,7 @@ export class App {
     app.use('*', logger())
     app.use('*', async (c, next) => {
       console.log(`  ::: ${c.req.method} ${c.req.url}`)
-      await next()
+      return next()
     })
     return this.applyRoutes(app)
   }
