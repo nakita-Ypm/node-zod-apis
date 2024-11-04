@@ -1,3 +1,6 @@
+deps:
+	rm -rf node_modules && rm -rf pnpm-lock.yaml && pnpm install
+
 fmt:	
 	pnpm fmt
 
@@ -9,3 +12,6 @@ ohrun:
 
 erun:
 	pnpm -F @apps/express dev
+
+migrate:
+	pnpm -F @packages/prisma migrate
