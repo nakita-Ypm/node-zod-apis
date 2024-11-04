@@ -1,3 +1,8 @@
+.env:
+	cp apps/express/.env.example apps/express/.env
+	cp apps/hono/.env.example apps/hono/.env
+	cp apps/openapi_hono/.env.example apps/openapi_hono/.env
+
 deps:
 	rm -rf node_modules && rm -rf pnpm-lock.yaml && pnpm install
 

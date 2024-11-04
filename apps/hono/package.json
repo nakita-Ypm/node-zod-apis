@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "dotenv": "^16.4.5",
     "tsx": "^4.7.1"
   }
 }
