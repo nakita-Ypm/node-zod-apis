@@ -2,7 +2,8 @@ import * as dotenv from 'dotenv'
 import { logger } from 'hono/logger'
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { HonoHandler } from '../handler/hono.ts'
+import { HonoHandler } from '../handler/hono_handler'
+import { PostHandler } from '../handler/post_handler'
 
 dotenv.config()
 
@@ -19,12 +20,12 @@ export class App {
     app.use('*', logger())
     app.use('*', async (c, next) => {
       console.log(`  ::: ${c.req.method} ${c.req.url}`)
-      await next()
+      return next()
     })
     return this.applyRoutes(app)
   }
 
   static applyRoutes(app: Hono) {
-    return app.route('/', HonoHandler.apply(app))
+    return app.route('/', HonoHandler.apply(app)).route('/post', PostHandler.apply(app))
   }
 }

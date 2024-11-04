@@ -1,6 +1,7 @@
 {
   "name": "@packages/prisma",
   "private": "true",
+  "main": "src/index.ts",
   "scripts": {
     "migrate": "prisma migrate dev --name init",
     "generate": "prisma generate"
