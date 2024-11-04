@@ -1,3 +1,8 @@
 node_modules
 pnpm-lock.yaml
 .pnpm-store
+.env
+dev.db
+dev.db-journal
+migrations/*_lint
+migration_lock.toml
