@@ -73,7 +73,7 @@ export class PostHandler {
         },
       )
       .delete(
-        '/post/:id',
+        '/posts/:id',
         zValidator(
           'param',
           z.object({
