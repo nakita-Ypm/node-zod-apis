@@ -9,7 +9,10 @@
     "@hono/node-server": "^1.13.5",
     "@hono/zod-openapi": "^0.16.4",
     "hono": "^4.6.9",
-    "@packages/schemas": "workspace:*"
+    "@packages/schemas": "workspace:*",
+    "@packages/prisma": "workspace:*",
+    "@packages/service": "workspace:*",
+    "@packages/domain": "workspace:*"
   },
   "devDependencies": {
     "@hono/swagger-ui": "^0.4.1",

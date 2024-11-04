@@ -1,4 +1,9 @@
 {
   "name": "@packages/service",
-  "main": "src/index.ts"
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@packages/domain": "workspace:*",
+    "@packages/prisma": "workspace:*"
+  }
 }

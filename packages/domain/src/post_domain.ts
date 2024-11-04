@@ -1,4 +1,4 @@
-import { Prisma } from "@packages/prisma"
+import { Prisma } from '@packages/prisma'
 
 type QueryValid = {
   page: string
@@ -6,6 +6,20 @@ type QueryValid = {
 }
 
 export class PostDomain {
+  /**
+   * buildCreatePostParams
+   * build Create Post Params
+   * @param post
+   * @returns Prisma.PostCreateArgs
+   */
+  static buildCreatePostParams(post: string): Prisma.PostCreateArgs {
+    return {
+      data: {
+        post,
+      },
+    }
+  }
+
   /**
    * buildGetPostParams
    * build Get Post Params
