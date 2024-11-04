@@ -9,3 +9,6 @@ ohrun:
 
 erun:
 	pnpm -F @apps/express dev
+
+migrate:
+	pnpm -F @packages/prisma migrate
