@@ -1,0 +1,16 @@
+{
+  "name": "@apps/express",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1"
+  }
+}
