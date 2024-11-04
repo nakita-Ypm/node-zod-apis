@@ -10,7 +10,7 @@ export class PostHandler {
   static apply(app: Hono) {
     return app
       .post(
-        '/post',
+        '/posts',
         zValidator(
           'json',
           postSchema.pick({
