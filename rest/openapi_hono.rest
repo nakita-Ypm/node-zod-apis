@@ -9,7 +9,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "post": "Hono🔥"
+    "post": "OpenAPIHono🔥"
 }
 
 ### GetPosts 5
