@@ -1,8 +1,8 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
-import { PostService } from '@packages/service'
-import { PostDomain } from '@packages/domain'
 import { Post } from '@packages/prisma'
 import { routes } from '../openapi'
+import { PostDomain } from '@packages/domain'
+import { PostService } from '@packages/service'
 
 export class PostHandler {
   static apply(app: OpenAPIHono) {

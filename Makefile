@@ -25,6 +25,7 @@ erun:
 
 # Prisma
 migrate:
+	rm -rf packages/prisma/dev.db
 	pnpm -F @packages/prisma migrate
 
 # Zod Prisma
