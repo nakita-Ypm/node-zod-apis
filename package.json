@@ -1,0 +1,10 @@
+{
+  "name": "node-zod-apis",
+  "private": true,
+  "scripts": {
+    "fmt": "pnpm biome format --write ./"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}
