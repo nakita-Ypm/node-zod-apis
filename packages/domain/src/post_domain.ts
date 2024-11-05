@@ -1,6 +1,6 @@
 import { Prisma } from '@packages/prisma'
 
-type QueryValid = {
+export type QueryValid = {
   page: string
   rows: string
 }

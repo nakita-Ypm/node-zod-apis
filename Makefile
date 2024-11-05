@@ -31,3 +31,10 @@ migrate:
 # Zod Prisma
 generate:
 	pnpm -F @packages/prisma generate
+
+# Test
+test:
+	pnpm -F @packages/domain test
+
+coverage:
+	pnpm -F @packages/domain coverage
