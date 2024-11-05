@@ -1,4 +1,4 @@
-import { App } from './app/index.ts'
+import { App } from './app'
 
 const app = App.init()
 export default app

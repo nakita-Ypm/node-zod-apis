@@ -13,14 +13,14 @@ export class App {
     const defaultPort = 3001
     const port = process.env.PORT !== undefined ? parseInt(process.env.PORT) : defaultPort
     console.log(`Server is running on http://localhost:${port}`)
-    serve({
-      fetch: app.fetch,
-      port,
-    })
     app.use('*', logger())
     app.use('*', async (c, next) => {
       console.log(`  ::: ${c.req.method} ${c.req.url}`)
       return next()
+    })
+    serve({
+      fetch: app.fetch,
+      port,
     })
     return this.applyRoutes(app)
   }

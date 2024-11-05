@@ -21,6 +21,9 @@ export class PostHandler {
           try {
             const valid = c.req.valid('json')
             if (!valid) return c.json({ message: 'Bad Request' }, 400)
+            const req = valid.post
+            await PostService.createPost(req)
+            return c.json(201)
           } catch (e) {
             console.error(e)
             return c.json({ message: 'Internal Server Error' }, 500)
