@@ -4,7 +4,7 @@ import { PostDomain } from '@packages/domain'
 export class PostService {
   /**
    * createPost
-   * 投稿を作成する
+   * create Post
    * @param post
    * @returns Promise<Post>
    */
@@ -16,12 +16,12 @@ export class PostService {
   /**
    * getPosts
    * get Post List
-   * @param page
-   * @param limit
+   * @param limt
+   * @param offset
    * @returns Promise<Post[]>
    */
-  static async getPosts(page: number = 1, limit: number = 10): Promise<Post[]> {
-    const data: Prisma.PostFindManyArgs = PostDomain.buildGetPostParams(page, limit)
+  static async getPosts(limt: number = 0, offset: number = 10): Promise<Post[]> {
+    const data: Prisma.PostFindManyArgs = PostDomain.buildGetPostParams(limt, offset)
     return await prisma.post.findMany(data)
   }
 

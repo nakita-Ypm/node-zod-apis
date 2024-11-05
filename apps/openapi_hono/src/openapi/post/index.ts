@@ -76,7 +76,7 @@ export const postRoutes = {
     request: {
       query: z.object({
         page: z.string(),
-        limit: z.string(),
+        rows: z.string(),
       }),
     },
     responses: {
