@@ -10,6 +10,16 @@ export class SwaggerHandler {
           version: 'v1',
         },
         openapi: '3.1.0',
+        tags: [
+          {
+            name: 'Hono',
+            description: 'Hono API',
+          },
+          {
+            name: 'Post',
+            description: 'Post API',
+          },
+        ],
       })
       .get('/ui', swaggerUI({ url: '/doc' }))
   }

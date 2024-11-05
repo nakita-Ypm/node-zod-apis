@@ -43,7 +43,7 @@ const internalServerErrorResponse = {
 export const postRoutes = {
   // createPost
   createPost: createRoute({
-    tags: ['createPost'],
+    tags: ['Post'],
     method: 'post',
     path: '/posts',
     description: 'Create a new post',
@@ -69,7 +69,7 @@ export const postRoutes = {
   }),
   // getPostList
   getPostList: createRoute({
-    tags: ['getPostList'],
+    tags: ['Post'],
     method: 'get',
     path: '/posts',
     description: 'get PostList posts with optional pagination',
@@ -94,7 +94,7 @@ export const postRoutes = {
   }),
   // updatePost
   updatePost: createRoute({
-    tags: ['updatePost'],
+    tags: ['Post'],
     method: 'put',
     path: '/posts/{id}',
     description: 'update Post',
@@ -119,7 +119,7 @@ export const postRoutes = {
   }),
   // deletePost
   deletePost: createRoute({
-    tags: ['deletePost'],
+    tags: ['Post'],
     method: 'delete',
     path: '/posts/{id}',
     description: 'delete post',
