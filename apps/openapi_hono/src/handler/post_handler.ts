@@ -1,13 +1,14 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { Post } from '@packages/prisma'
-import { routes } from '../openapi'
+
 import { PostDomain } from '@packages/domain'
 import { PostService } from '@packages/service'
+import { postRoutes } from '../openapi'
 
 export class PostHandler {
   static apply(app: OpenAPIHono) {
     return app
-      .openapi(routes['createPost'], async (c) => {
+      .openapi(postRoutes['createPost'], async (c) => {
         try {
           const valid = c.req.valid('json')
           if (!valid) return c.json({ message: 'Bad Request' }, 400)
@@ -19,7 +20,7 @@ export class PostHandler {
           return c.json({ message: 'Internal Server Error' }, 500)
         }
       })
-      .openapi(routes['getPostList'], async (c) => {
+      .openapi(postRoutes['getPostList'], async (c) => {
         try {
           const valid = c.req.valid('query')
           if (!valid) return c.json({ message: 'Bad Request' }, 400)
@@ -36,7 +37,7 @@ export class PostHandler {
           return c.json({ message: 'Internal Server Error' }, 500)
         }
       })
-      .openapi(routes['updatePost'], async (c) => {
+      .openapi(postRoutes['updatePost'], async (c) => {
         try {
           const param_valid = c.req.valid('param')
           if (!param_valid) return c.json({ message: 'Bad Request' }, 400)
@@ -51,7 +52,7 @@ export class PostHandler {
           return c.json({ message: 'Internal Server Error' }, 500)
         }
       })
-      .openapi(routes['deletePost'], async (c) => {
+      .openapi(postRoutes['deletePost'], async (c) => {
         try {
           const valid = c.req.valid('param')
           if (!valid) return c.json({ message: 'Bad Request' }, 400)

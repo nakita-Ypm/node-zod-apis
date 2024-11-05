@@ -1,10 +1,10 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
-import { routes } from '../openapi'
+import { honoRoutes } from '../openapi'
 
 export class OpenAPIHonoHandler {
   static apply(app: OpenAPIHono) {
-    return app.openapi(routes['Hono'], async (c) => {
-      return c.json({ message: 'Hono🔥' })
+    return app.openapi(honoRoutes['Hono'], async (c) => {
+      return c.json({ message: 'OpenAPIHono🔥' })
     })
   }
 }
