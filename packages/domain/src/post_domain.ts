@@ -2,7 +2,7 @@ import { Prisma } from '@packages/prisma'
 
 type QueryValid = {
   page: string
-  limit: string
+  rows: string
 }
 
 export class PostDomain {
@@ -23,18 +23,17 @@ export class PostDomain {
   /**
    * buildGetPostParams
    * build Get Post Params
-   * @param page
    * @param limit
+   * @param offset
    * @returns Prisma.PostFindManyArgs
    */
-  static buildGetPostParams(page: number, limit: number): Prisma.PostFindManyArgs {
-    const skip = (page - 1) * limit
+  static buildGetPostParams(limit: number, offset: number): Prisma.PostFindManyArgs {
     return {
+      skip: offset,
+      take: limit,
       orderBy: {
         createdAt: 'desc',
       },
-      skip,
-      take: limit,
     }
   }
 
@@ -74,14 +73,14 @@ export class PostDomain {
    * convertNumberQueryParams
    * convert Number Query Params
    * @param page
-   * @param limit
-   * @returns { page: number; limit: number }
+   * @param rows
+   * @returns { page: number; rows: number }
    */
-  static convertNumberQueryParams(valid: QueryValid): { page: number; limit: number } {
-    const { page, limit } = valid
+  static convertNumberQueryParams(valid: QueryValid): { page: number; rows: number } {
+    const { page, rows } = valid
     return {
       page: parseInt(page),
-      limit: parseInt(limit),
+      rows: parseInt(rows),
     }
   }
 }

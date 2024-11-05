@@ -36,18 +36,20 @@ export class PostHandler {
           'query',
           z.object({
             page: z.string(),
-            limit: z.string(),
+            rows: z.string(),
           }),
         ),
         async (c) => {
           try {
             const valid = c.req.valid('query')
             if (!valid) return c.json({ message: 'Bad Request' }, 400)
-            const { page, limit } = PostDomain.convertNumberQueryParams(valid)
-            if (isNaN(page) || isNaN(limit) || page < 1 || limit < 1) {
+            const { page, rows } = PostDomain.convertNumberQueryParams(valid)
+            if (isNaN(page) || isNaN(rows) || page < 1 || rows < 1) {
               return c.json({ message: 'Bad Request' }, 400)
             }
-            const res: Post[] = await PostService.getPosts(page, limit)
+            const limit = rows
+            const offset = (page - 1) * rows
+            const res: Post[] = await PostService.getPosts(limit, offset)
             return c.json(res, 200)
           } catch (e) {
             console.error(e)
