@@ -6,7 +6,7 @@ export const expressSchema = z.object({
   message: z.string(),
 })
 
-const expressApi = makeApi([
+export const expressApi = makeApi([
   {
     method: 'get',
     path: '/',
