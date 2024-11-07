@@ -1,6 +1,13 @@
 import { createRoute, z } from '@hono/zod-openapi'
 import { postSchema } from '@packages/schemas'
 
+// 201 Created
+const createdResponse = {
+  201: {
+    description: 'Created',
+  },
+}
+
 // 204 No Content
 const noContentResponse = {
   204: {
@@ -46,7 +53,7 @@ export const postRoutes = {
     tags: ['Post'],
     method: 'post',
     path: '/posts',
-    description: 'Create a new post',
+    description: 'create a new post',
     request: {
       body: {
         required: true,
@@ -60,9 +67,7 @@ export const postRoutes = {
       },
     },
     responses: {
-      201: {
-        description: 'Created',
-      },
+      ...createdResponse,
       ...badRequestResponse,
       ...internalServerErrorResponse,
     },

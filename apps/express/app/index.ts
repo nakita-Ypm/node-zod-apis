@@ -1,11 +1,11 @@
-import { zodiosApp } from '@zodios/express'
-import { expressRoute } from '../api/express'
+import express from 'express'
 import { ExpressHandler } from '../handler/express_handler'
+import { PostHandler } from '../handler/post_handler'
 
 export class App {
   static init() {
-    const app = zodiosApp()
-    this.applyRoutes(app)
+    const app = express()
+    app.use(express.json())
     this.applyHandler(app)
     const defaultPort = 3003
     const port = process.env.PORT !== undefined ? parseInt(process.env.PORT) : defaultPort
@@ -14,11 +14,8 @@ export class App {
     })
   }
 
-  static applyHandler(app) {
+  static applyHandler(app: express.Application) {
     ExpressHandler.apply(app)
-  }
-
-  static applyRoutes(app) {
-    app.use(expressRoute)
+    PostHandler.apply(app)
   }
 }

@@ -1,0 +1,13 @@
+### Express
+GET http://localhost:3003/
+Content-Type: application/json
+Accept: application/json
+
+### CreatePost
+POST http://localhost:3003/posts HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "post": "Express"
+}

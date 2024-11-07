@@ -1,5 +1,4 @@
 import { makeApi } from '@zodios/core'
-import { zodiosApp } from '@zodios/express'
 import { z } from 'zod'
 
 export const expressSchema = z.object({
@@ -15,5 +14,3 @@ export const expressApi = makeApi([
     response: expressSchema,
   },
 ])
-
-export const expressRoute = zodiosApp(expressApi)
