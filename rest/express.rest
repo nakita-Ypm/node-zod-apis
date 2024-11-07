@@ -11,3 +11,26 @@ Accept: application/json
 {
     "post": "Express"
 }
+
+### GetPosts 5
+GET http://localhost:3003/posts?page=1&rows=5 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+### GetPosts 10
+GET http://localhost:3003/posts?page=1&rows=10 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+### Put http://localhost:3003/api/posts/{id} HTTP/1.1
+PUT http://localhost:3003/posts/b36542fd-fc2b-4aa4-a727-f00d5afa240c HTTP/1.1
+Content-Type: application/json
+
+{
+  "post": "Update Post"
+}
+
+### Delete http://localhost:3003/api/posts/{id} HTTP/1.1
+DELETE http://localhost:3003/posts/f9ee6c09-4718-4c22-b6f9-985d85542f2e HTTP/1.1
+Content-Type: application/json
+Accept: application/json
