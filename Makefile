@@ -23,6 +23,10 @@ ohrun:
 erun:
 	pnpm -F @apps/express dev
 
+# Zodios Express
+zerun:
+	pnpm -F @apps/zodios_express dev
+
 # Prisma
 migrate:
 	rm -rf packages/prisma/dev.db
