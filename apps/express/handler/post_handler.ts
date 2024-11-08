@@ -1,8 +1,8 @@
 import express from 'express'
 import { z } from 'zod'
-import { postSchema } from '@packages/schemas'
 import { PostService } from '@packages/service'
 import { PostDomain } from '@packages/domain'
+import { postSchema } from '@packages/schemas'
 import { Post } from '@packages/prisma'
 
 export class PostHandler {
