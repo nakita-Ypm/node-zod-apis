@@ -15,10 +15,10 @@ const updatePostApiClient = new Zodios('http://localhost:3003/', updatePost)
 const expressRes = await expressApiClient.get('/')
 console.log(expressRes)
 
-// const createPostRes = await createPostApiClient.createPost({
-//   post: 'Express Zodios',
-// })
-// console.log(createPostRes)
+const createPostRes = await createPostApiClient.createPost({
+  post: 'Express Zodios',
+})
+console.log(createPostRes)
 
 // const getPostListRes = await getPostListApiClient.getPostList({
 //   queries: {

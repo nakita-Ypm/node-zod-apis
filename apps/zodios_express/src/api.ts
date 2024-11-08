@@ -2,6 +2,20 @@ import { makeApi } from '@zodios/core'
 import { z } from 'zod'
 import { postSchema } from '@packages/schemas'
 
+export const expressSchema = z.object({
+  message: z.string(),
+})
+
+export const expressApi = makeApi([
+  {
+    method: 'get',
+    path: '/',
+    alias: 'express',
+    description: 'express',
+    response: expressSchema,
+  },
+])
+
 const generateResponseSchema = (statusCode: number, description: string) => {
   return z.object({
     [statusCode]: z.object({
@@ -37,7 +51,7 @@ const badRequestResponseSchema = generateResponseSchema(400, 'Bad Request')
 // 500 Internal Server Error
 const internalServerErrorResponseSchema = generateResponseSchema(500, 'Internal Server Error')
 
-export const createPost = makeApi([
+export const postApi = makeApi([
   // createPost
   {
     method: 'post',
