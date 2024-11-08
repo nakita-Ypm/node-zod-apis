@@ -1,4 +1,0 @@
-### Zodios Express
-GET http://localhost:3004/
-Content-Type: application/json
-Accept: application/json
