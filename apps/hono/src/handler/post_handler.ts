@@ -1,9 +1,9 @@
-import { zValidator } from '@hono/zod-validator'
-import { postSchema } from '@packages/schemas'
 import { Hono } from 'hono'
+import { zValidator } from '@hono/zod-validator'
 import { z } from 'zod'
-import { PostDomain } from '@packages/domain'
 import { PostService } from '@packages/service'
+import { PostDomain } from '@packages/domain'
+import { postSchema } from '@packages/schemas'
 import { Post } from '@packages/prisma'
 
 export class PostHandler {

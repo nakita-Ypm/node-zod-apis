@@ -16,12 +16,12 @@ export class PostService {
   /**
    * getPosts
    * get Post List
-   * @param limt
+   * @param limit
    * @param offset
    * @returns Promise<Post[]>
    */
-  static async getPosts(limt: number = 0, offset: number = 10): Promise<Post[]> {
-    const data: Prisma.PostFindManyArgs = PostDomain.buildGetPostParams(limt, offset)
+  static async getPosts(limit: number = 0, offset: number = 10): Promise<Post[]> {
+    const data: Prisma.PostFindManyArgs = PostDomain.buildGetPostParams(limit, offset)
     return await prisma.post.findMany(data)
   }
 
